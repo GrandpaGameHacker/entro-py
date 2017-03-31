@@ -61,7 +61,8 @@ def bitent(buffer):
 	Keyword arguments:
 	buffer -- a byte like buffer (bytearray, bytes) to measure
 	"""
-	return ent(buffer)*8
+	entropy = ent(buffer)*8
+	return entropy
 
 def listbitent(buffer, blocksize):
 	"""Measure the entropy of a group of bytes in blocks
@@ -80,7 +81,7 @@ def listbitent(buffer, blocksize):
 	currentblock = 0
 	nextblock = blocksize
 	for i in range(nblocks):
-		entropylist.append(ent(buffer[currentblock:nextblock])*8)
+		entropylist.append(bitent(buffer[currentblock:nextblock]))
 		currentblock+=blocksize
 		nextblock+=blocksize
 	return entropylist

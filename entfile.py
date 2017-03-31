@@ -20,7 +20,7 @@ def bitent(file):
 	f = open(file,"rb")
 	bytes = f.read()
 	f.close()
-	return e.ent(bytes)
+	return e.bitent(bytes)
 
 def listbitent(file, blocksize):
 	f = open(file,"rb")
