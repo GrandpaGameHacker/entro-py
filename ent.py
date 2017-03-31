@@ -30,7 +30,7 @@ def ent(buffer):
 	return -entropy
 
 	
-def listent(buffer, blocksize):
+def listEnt(buffer, blocksize):
 	"""Measure the entropy of a group of bytes in blocks
 	Returns a list of values between 0 and 1
 	
@@ -54,7 +54,7 @@ def listent(buffer, blocksize):
 	return entropylist
 
 
-def bitent(buffer):
+def bitEnt(buffer):
 	"""Measure the entropy of a group of bytes
 	Returns a floating point entropy value between 0 and 8 (bits per byte)
 
@@ -64,7 +64,7 @@ def bitent(buffer):
 	entropy = ent(buffer)*8
 	return entropy
 
-def listbitent(buffer, blocksize):
+def listBitEnt(buffer, blocksize):
 	"""Measure the entropy of a group of bytes in blocks
 	Returns a list of values between 0 and 8 (bits per byte)
 	
@@ -81,7 +81,7 @@ def listbitent(buffer, blocksize):
 	currentblock = 0
 	nextblock = blocksize
 	for i in range(nblocks):
-		entropylist.append(bitent(buffer[currentblock:nextblock]))
+		entropylist.append(bitEnt(buffer[currentblock:nextblock]))
 		currentblock+=blocksize
 		nextblock+=blocksize
 	return entropylist
