@@ -2,7 +2,7 @@
 This module contains functions that measure amount of information
 entropy in byte-type buffers using the shannon entropy algorithm
 Reference: - https://en.wikipedia.org/wiki/Shannon_entropy
-Algorithm adapted on C++ code from x64dbg project at
+Algorithm adapted from C++ code from x64dbg project at
 Reference: - https://github.com/x64dbg/x64dbg/blob/development/src/gui/Src/QEntropyView/Entropy.h
 """
 import math
