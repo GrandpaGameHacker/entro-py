@@ -1,7 +1,16 @@
 """
-This module contains functions that measure amount of information
-entropy in byte-type buffers using the shannon entropy algorithm
+This module contains functions that measure amount of entropy
+in byte-type buffers using the shannon entropy algorithm
 Reference: - https://en.wikipedia.org/wiki/Shannon_entropy
+
+Entropy in this context is measuring the disorder in sequences of bytes.
+e.g. repeating byte values like '\x30\x30\x30' would produce entropy of 0.0,
+while representing all possible byte values (0x00 to 0xFF) will produce an entropy of 1.0
+
+This can be used to statistically analyse data to infer what type of data it is.
+For example compressed or encrypted data can have a high entropy, and so it can be used to detect
+if a data set is compressed or encrypted.
+
 Algorithm adapted from C++ code from x64dbg project at
 Reference: - https://github.com/x64dbg/x64dbg/blob/development/src/gui/Src/QEntropyView/Entropy.h
 """
