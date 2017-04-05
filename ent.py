@@ -11,6 +11,10 @@ This can be used to statistically analyse data to infer what type of data it is.
 For example compressed or encrypted data can have a high entropy, and so it can be used to detect
 if a data set is compressed or encrypted.
 
+If data is has been processed with a basic substitution type cipher, or additive cipher such as exclusive or,
+the entropy of the plaintext and ciphertext are exactly the same, and so entropy measurement is useless.
+This is because the probabilities of each symbol are still the same.
+
 Algorithm adapted from C++ code from x64dbg project at
 Reference: - https://github.com/x64dbg/x64dbg/blob/development/src/gui/Src/QEntropyView/Entropy.h
 """
